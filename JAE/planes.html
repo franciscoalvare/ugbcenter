@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<style>
+	footer
+	{
+		margin-top:40px;
+		position:absolute;
+		bottom:-50;
+		width:100%;
+	}
+
+	
+	</style>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+                  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="utf-8">
+    </head>
+
+    <body>        
+		<nav class="grey darken-3">
+<div class="navbar-fixed">
+    <nav class="panel grey darken-4">
+      <ul class="left hide-on-med-and-down">
+        <li><a href="Index.html" class="light-blue darken-1 btn btn">Inicio</a></li>
+		<li><a href="planes.html" class="btn waves-effect waves-light light-blue darken-4">Planes</a></li>
+		<li><a href="Nosotros.html" class="light-blue darken-1 btn">Nosotros</a></li>
+      </ul>
+    </div>
+	</nav>
+	
+	
+	 
+
+          
+    <br><br>
+	<div class="row">
+	<div class="col s4">
+	<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <center><img class="" src="Basico.png" width="420px" height="350px"></center>
+    </div>
+    <div class="card-content"><center>
+      <span class="card-title grey-text text-darken-4">Básico.<i class="material-icons right"></i></span>
+      
+    </div>
+    
+  </div>
+</div>
+	
+	
+	<div class="row" id="Seccion">
+	<div class="col s4">
+	<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <center><img class="activator" src="Intermedio.png" width="420px" height="350px"></center>
+    </div>
+    <div class="card-content"><center>
+      <span class="card-title grey-text text-darken-4">Intermedio.<i class="material-icons right"></i></span>
+      
+    </div>
+    
+  </div>
+</div>
+	
+	<div class="row">
+	<div class="col s4">
+	<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <center><img class="activator" src="Premiun.png" width="420px" height="350px"></center>
+    </div>
+    <div class="card-content"><center>
+      <span class="card-title grey-text text-darken-4">Premium.<i class="material-icons right"></i></span>
+      
+    </div>
+    
+  </div>
+</div>
+	
+	
+	
+   
+      </div>
+	  </div>
+	<div class="row">
+		<div class="col s12">
+			<h4></h4>
+		</div>
+	</div>
+
+	  
+<!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+    $('select').material_select();
+  });
+  
+ 
+function registrar() {
+    //var deviceID = device.uuid;
+	var IP=document.getElementById("IP").value;
+    var theUrl = "http://"+IP+"/Bolivar/agregar.php";
+    
+    var Articulo = document.getElementById("Articulo").value;
+    var Precio = document.getElementById("Precio").value;
+    var Descripcion = document.getElementById("Descripcion").value;       
+    
+    var parametros = "&Articulo="+Articulo+"&Precio=" + Precio + "&Descripcion=" + Descripcion + "";
+    
+    var http = new XMLHttpRequest();// request http funciones de interaccion con la web
+    http.open("POST", theUrl, true); // false for synchronous request
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(parametros);
+    Materialize.toast('Sus Datos Fueron Enviados!', 4000);
+}
+
+function limpiar() {
+    document.getElementById("Articulo").value = "";
+	document.getElementById("Precio").value = "";
+	document.getElementById("Descripcion").value = "";
+}
+
+ var instance = M.Tabs.init(el, options);
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.tabs').tabs();
+  });
+            
+        </script>
+		
+		<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+    </body>
+	
+    <footer class="grey darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Accesorios.</h5>
+                <p class="grey-text text-lighten-4">Contamos con una gran variedad de Smartphone. Disponibles ya!</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Redes.</h5>
+                <ul>
+                <a href="https://www.facebook.com/" target=""> <img src="https://image.flaticon.com/icons/svg/69/69407.svg" width="35"></a>
+                <a href="https://twitter.com/" target=""> <img src="https://image.flaticon.com/icons/svg/160/160194.svg" width="35"></a>
+                </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <span class="white-text text-darken-2">© 2018 Copyright Tablets Shop.</span>
+            </div>
+          </div>
+        </footer>
+		
+</html>

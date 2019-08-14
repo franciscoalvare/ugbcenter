@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<style>
+	footer
+	{
+		margin-top:40px;
+		position:absolute;
+		bottom:-50;
+		width:100%;
+	}
+
+	
+	</style>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+                  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="utf-8">
+		
+		<title> JAE</title>
+    </head>
+
+    <body>        
+		<nav class="grey darken-3">
+<div class="navbar-fixed">
+    <nav class="panel grey darken-4">
+      <ul class="left hide-on-med-and-down">
+        <li><a href="Index.html" class="light-blue darken-1 btn">Inicio</a></li>
+		<li><a href="planes.html" class="light-blue darken-1 btn">Planes</a></li>
+		<li><a href="Nosotros.html" class="btn waves-effect waves-light light-blue darken-4">Nosotros</a></li>
+      </ul>
+    </div>
+	</nav>
+	
+	
+	 
+<a href="mision.html" class="grey lighten-1 btn"><i class="material-icons left"></i>Mision</a>
+<a href="vision.html" class="grey darken-1 btn"><i class="material-icons right"></i>Vision</a>
+        
+          
+     <div class="row valign-wrapper">
+           <div class="card-panel greydarken-4">
+            <div class="col s6">
+              <span class="black-text">
+			  <br><br><br><br><br><br>
+                 <h4>Visión.</h4>
+				Ser una empresa líder en la industria de las tecnologías de información y servicios en la nube, 
+				que permita satisfacer las necesidades de nuestros clientes garantizándoles la seguridad, integridad y disponibilidad de la información.
+              </span>
+            </div>
+			 <div class="col s6">
+             <a href="imagen2.html" > <img src="Banner.png" alt="" class="responsive-img" width="500"></a> <!-- notice the "circle" class -->
+            </div>
+			</div>
+          </div>
+
+	  
+<!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+    $('select').material_select();
+  });
+  
+ 
+function registrar() {
+    //var deviceID = device.uuid;
+	var IP=document.getElementById("IP").value;
+    var theUrl = "http://"+IP+"/Bolivar/agregar.php";
+    
+    var Articulo = document.getElementById("Articulo").value;
+    var Precio = document.getElementById("Precio").value;
+    var Descripcion = document.getElementById("Descripcion").value;       
+    
+    var parametros = "&Articulo="+Articulo+"&Precio=" + Precio + "&Descripcion=" + Descripcion + "";
+    
+    var http = new XMLHttpRequest();// request http funciones de interaccion con la web
+    http.open("POST", theUrl, true); // false for synchronous request
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(parametros);
+    Materialize.toast('Sus Datos Fueron Enviados!', 4000);
+}
+
+function limpiar() {
+    document.getElementById("Articulo").value = "";
+	document.getElementById("Precio").value = "";
+	document.getElementById("Descripcion").value = "";
+}
+
+ var instance = M.Tabs.init(el, options);
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.tabs').tabs();
+  });
+            
+        </script>
+		
+		<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+    </body>
+	
+    <footer class="grey darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Visión.</h5>
+                <p class="grey-text text-lighten-4">Servicio de Alojamiento de Servidores en la Nube.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Redes.</h5>
+                <ul>
+                <a href="https://www.facebook.com/" target=""> <img src="https://image.flaticon.com/icons/svg/69/69407.svg" width="35"></a>
+                <a href="https://twitter.com/" target=""> <img src="https://image.flaticon.com/icons/svg/160/160194.svg" width="35"></a>
+                </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <span class="white-text text-darken-2">© 2019 Copyright JAE.</span>
+            </div>
+          </div>
+        </footer>
+		
+</html>
